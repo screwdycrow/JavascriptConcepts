@@ -46,6 +46,10 @@ fruits.push({
 });
 console.log(fruitsNames);
 console.log(fruits);
+
+console.log('============SLICE AND CLONING============');
+
+//SLICE AND CLONING
 //slice, makes a subarray based on the given array
 let subfruits = fruits.slice(0,2); //position 0 end position 2
 console.log('======== \n subfruits',subfruits);
@@ -69,3 +73,39 @@ subfruitsclone[0].id='apple3';
 console.log('====>subfruitsclone:' ,subfruitsclone[0],'====>subfruits: ',subfruits[0], ' \n ====>fruits: ',fruits[0]);
 
 //only subfruitsclone changed!!!
+
+//SPLICE//
+console.log('============SPLICE============');
+let fruits2 = clone(fruits);
+let splicedFruits = fruits2.splice(0,2,'lalalalala'); //remove from fruits2 0 till 1 index keys, and add them to spliced then add lalalala
+console.log('splicedFruits',splicedFruits);
+console.log('fruits2',fruits2);
+
+//EVERY-SOME//
+console.log('============EVERY-SOME============');
+
+let iseveryfruitfav = fruits.every((fruit)=>fruit.likeness === 5 ); //checks every fruit
+console.log(iseveryfruitfav);
+let issomefruitfav = fruits.some((fruit)=>fruit.likeness === 5);
+console.log(issomefruitfav);
+//ENTRIES//
+let fruitentries  = fruitsNames.entries();
+console.log(fruitentries.next()); //creates an iterable version (see generators)
+
+//INCLUDES//
+console.log('============INCLUDES============');
+
+//COPY WITH IN
+fruitsNames2 = clone(fruitsNames);
+console.log(fruitsNames2);
+fruitsNames2.copyWithin(0,2,4);
+console.log(fruitsNames2);
+
+// JOIN
+
+console.log('we like '+fruitsNames.join(' and '));
+
+//last index of
+
+let numbers = [1,2,5,7,8,9,2,1];
+console.log('last appereance of 2 in position: ',numbers.lastIndexOf(2), '| and of 1 in position: ',numbers.lastIndexOf(1));
