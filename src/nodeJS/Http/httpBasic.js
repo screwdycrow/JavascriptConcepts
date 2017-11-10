@@ -14,4 +14,4 @@ http.createServer(function (req, res) {
     //then we append to the body the text we want
     res.end('Hello world \n');
 }).listen(1337, '127.0.0.1');
-//listen on 1337 on localhost ( http://localhost:1337)
+//listen on 1337 on localhost  ( http://localhost:1337)
